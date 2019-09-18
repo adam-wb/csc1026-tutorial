@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>CSC1026 Tutorial - Web Content</title>
+
+    <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- My CSS --> 
+  <link href="css/core.css" rel="stylesheet">
+ </head>
+ <body>
+  <div id="wrapper">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">CSC1026 Tutorial <span class="glyphicon glyphicon-home"></span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">How The Internet Works
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HowTheInternetWorks.html">What is the Internet?</a></li>
+          <li><a href="HowTheInternetWorks.html#csp">Clients, Servers &amp; Peers</a></li>
+          <li><a href="HowTheInternetWorks.html#protocols">Protocols</a></li>
+          <li><a href="HowTheInternetWorks.html#tcpip">TCP/IP</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Architecture
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebArchitecture.html">Browsers</a></li>
+          <li><a href="WebArchitecture.html#servers">Servers</a></li>
+          <li><a href="WebArchitecture.html#components">Key Components</a></li>
+        </ul>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTTP
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HTTP.html">Request Response</a></li>
+          <li><a href="HTTP.html#methods">HTTP Methods</a></li>
+          <li><a href="HTTP.html#headers">Headers</a></li>
+          <li><a href="HTTP.html#makerequest">Making Requests</a></li>
+          <li><a href="HTTP.html#responsecodes">Response Codes</a></li>
+        </ul>
+      <li class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Content
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebContent.html">Overview</a></li>
+          <li><a href="WebContent.html#htmlcssjs">HTML, CSS &amp; JavaScript</a></li>
+          <li><a href="WebContent.html#dom">The DOM</a></li>
+          <li><a href="WebContent.html#frameworks">Extensions &amp; Frameworks</a></li>
+        </ul>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+  </div>
+</nav>
+   <div class="container">
+    <h1 id="content">Web Content</h1>
+    <div class="row">
+     <div class="col-md-12">
+      <h2>Web Content Overview</h2>
+      <p>Every web document uses HTML to specify content structure and semantics. Other embedded technologies are used to enhance appearance and behaviour of a page. CSS is used for style and layout while scripting languages such as JavaScript (client-side), PHP or Ruby (server side). Source code is delivered to the browser via HTTP or the local file system. This file is then processed by the browser and displayed to the user. The final appearance of a site is a combination of both the author's code and the rendering capabilities of the browser.</p>
+      <p>It is considered good practice to seperate these different elements of website design. Meaningful structural information such as headings, paragraphs and emphasis should be conveyed in the <strong>HTML</strong> document. The appearance of a page, such as layout, typefaces and colour schemes should be specified in a <strong>CSS</strong> file. Any interactive or responsive functionality such as any response to user input or handling various browser inconsitencies should be handled in a seperate scripting file, for example a <strong>JavaScript</strong> file.</p>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-md-4">
+      <h2 id="htmlcssjs">HTML</h2>
+      <p>HTML is made up of <em>tags</em> to specify organisation and structure. For example, headers are specified using <code>&lt;h1&gt;</code> through to <code>&lt;h5&gt;</code> tags. A tag is closed using a forward slash, e.g. <code>&lt;/h1&gt;</code>. In more modern versions of HTML such as HTML5 or XHTML, some tags can be self-closing such as the break tag, <code>&lt;br/&gt;</code>. This is considered best practice over writing something like <code>&lt;br&gt;&lt;/br&gt;</code>. HTML can denote structural choices like the use of lists:</p>
+      <button id="htmlButton" type="button" class="btn btn-default btn-xs">Preview HTML</button>
+      <div id="htmlCode">
+<pre>
+&lt;h1&gt; Flags &lt;/h1&gt;
+
+&lt;ul&gt;
+    &lt;li&gt; &lt;a href="#intro"&gt; Introduction &lt;/a&gt;<br/> &lt;/li&gt;
+    &lt;li&gt; &lt;a href="#history"&gt; History &lt;/a&gt;<br/> &lt;/li&gt;
+    &lt;li&gt; &lt;a href="#flags"&gt; National Flags &lt;/a&gt;<br/> &lt;/li&gt;
+    &lt;li&gt; &lt;a href="#imsf"&gt; International Maritime<br/> Signal Flags &lt;/a&gt;
+            &lt;ul&gt;
+                &lt;li&gt; &lt;a href="#imsfLetters"&gt;<br/> Maritime Signals: Letters &lt;/a&gt; &lt;/li&gt;
+                &lt;li&gt; &lt;a href="#imsfNumbers"&gt;<br/> Maritime Signals: Numbers &lt;/a&gt; &lt;/li&gt;
+            &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+      </div>
+<div id="htmlPreview" class="hidden">
+    <h1> Flags </h1>
+    <ul>
+        <li> Introduction </li>
+        <li> History </li>
+        <li> National Flags </li>
+        <li> International Maritime Signal Flags
+                <ul>
+                    <li> Maritime Signals: Letters </li>
+                    <li> Maritime Signals: Numbers </li>
+                </ul>
+        </li>
+    </ul>        
+</div>
+     </div>
+     <div class="col-md-4">
+      <h2>CSS</h2>
+      <p>CSS allows layout and other effects to be applied to given HTML tags or locations in a HTML document. For example, to make all <code>&lt;h1&gt;</code> tags be aligned to the center:</p> 
+<pre>
+h1 {    
+    text-align: center;
+}
+</pre>
+      <p>Style rules can be limited to certain parts of a document wrapped in named <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags. This style rule will only affect elements wrapped inside <code>&lt;div id="picture"&gt;</code>, <code>id="picture"</code> is an example of a  HTML attribute.</p>
+<pre>
+#picture {
+          position: relative;
+          width: 300px;
+          height: 250px;
+}
+</pre>
+      <p>It is important to note that div and span ids <strong>cannot</strong> start with a number.</p>
+     </div>
+     <div class="col-md-4">
+      <h2>JavaScript</h2>
+      <p>JavaScript is a scripting language that executes on the client machine in a web browser. It is embedded into XHTML and arrives wit the webpage. JavaScript uses a syntax very similar to <code>C</code>. There are two ways to add Javascript to a page, one is using inline <code>&lt;style&gt;</code> tags.</p>
+      <button id="scriptButton" type="button" class="btn btn-default btn-xs">Run Script</button>
+<pre id="helloWorld">
+&lt;script type="text/javascript"&gt;
+    window.alert("You pressed the button!");
+&lt;/script&gt;
+</pre>
+      <p>Alternatively, JavaScript can be kept in an external file. This allows repeated code to be reused across multiple documents and maintains a good degree of seperation.</p>
+<pre>
+&lt;script type="text/javascript"<br/> src="js/examplescript.js"&gt;&lt;/script&gt;
+</pre>
+      <p>The two methods can't be combined, that is, you cannot have a hybrid internal/external <code>&lt;script&gt;</code> block. <code>&lt;script&gt;</code> also cannot be self closed with <code>&lt;script/&gt;</code></p>
+     </div> 
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+    <h2 id="dom">Script Access &amp; The <a data-toggle="tooltip" title="Document Object Model">DOM</a></h2>
+     <p>A Document Object Model defines objects in a document, the relationships between them as well as their methods and properties. The HMTL DOM describes a HTML document and the browser that it is contained in. It allows access to any part of a document according to the hierarchy. Different DOMs are available, but the <strong>W3C DOM</strong> is considered standard by most browsers.</p>
+     <p>The DOM can be used to access objects on a webpage.</p>
+<pre>
+document.getElementByID("TextBox").value = "Hello";
+
+document.getElementsByTagName("h1");
+</pre>
+        <p>The DOM can also be used for event handlers, this can be done in multiple ways:</p>
+        <p>Inline (Found in HTML, not a script file)</p>
+<pre>
+&lt;a href="index.html" onclick="function();"&gt;Click for script&lt;/a&gt;
+</pre>
+        <p>Within a script:</p>
+        <p>Traditional</p>
+<pre>
+document.getElementById("click").onClick = <a data-toggle="popover" data-trigger="hover" title="youClicked" data-content="function youClicked() { alert('You clicked!');}">youClicked</a>
+</pre>
+        <p>Internet Explorer Compatability (Event attachement)</p>
+<pre>
+document.getElementById("click").attachEvent('onClick',<a data-toggle="popover" data-trigger="hover" title="youClicked" data-content="function youClicked() { alert('You clicked!');}">youClicked</a>)
+</pre>
+        <p>W3C Method</p>
+<pre>
+document.getElementById("click").addEventListener('click',<a data-toggle="popover" data-trigger="hover" title="youClicked" data-content="function youClicked() { alert('You clicked!');}">youClicked</a>,false)
+</pre>
+    </div>
+    </div>
+   <h2 id="frameworks">Extensions &amp; Frameworks</h2>
+    <div class="row">
+     <div class="col-md-12">
+     <p>Making a good looking website and coding good javascript can be hard work and time consuming, fortunately, there are some tools available to make life easier. This website, for example, is built using <a href="http://getbootstrap.com/">Bootstrap</a>, as well as <a href="https://jquery.com/">jQuery</a>.</p>
+     <h3>Bootstrap</h3>
+     <p>Bootstrap is an open source framework for HTML, CSS and JavaScript. It is <em>repsonsive</em>, which means it can be used to scale to any sized screen on a desktop, tablet or mobile device. It comes with an assortment of pre-packaged css rules for various html elements in addition to a variety of jQuery plugins. Bootstrap also includes an assortment of icons such as the one used on this website's navigation bar as part of the home button. These are provided by <a href="http://glyphicons.com">Gylphicon</a>.</p>
+     <h3>jQuery</h3>
+     <p>jQuery is mandatory for various Bootstrap plugins to work, such as the <a data-toggle="tooltip" title="This is a tooltip!"> hover over tooltips</a> and <a data-toggle="popover" data-trigger="hover" title="Popover" data-content="This is a pop over!">pop overs</a> seen on this page just above here. Apart from being necessary for Bootstrap plugins to work, jQuery is useful for writing JavaScript in general. The basic idea behind it is to simplify common functions so they take less time to write. In JavaScript, the start of a jQuery function is denoted by a <code>$</code>. This JavaScript library works across multiple browsers and can find elements through CSS selectors or manipulate CSS rules.</p>
+     </div>   
+    </div>
+   </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.slim.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+   <!-- My JavaScript -->
+   <script src="js/core.js"></script>
+  </div>
+ </body>
+</html>

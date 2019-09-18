@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>CSC1026 Tutorial - Web Architecture</title>
+
+    <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="css/core.css" rel="stylesheet">
+ </head>
+ <body>
+  <div id="wrapper">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">CSC1026 Tutorial <span class="glyphicon glyphicon-home"></span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">How The Internet Works
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HowTheInternetWorks.html">What is the Internet?</a></li>
+          <li><a href="HowTheInternetWorks.html#csp">Clients, Servers &amp; Peers</a></li>
+          <li><a href="HowTheInternetWorks.html#protocols">Protocols</a></li>
+          <li><a href="HowTheInternetWorks.html#tcpip">TCP/IP</a></li>
+        </ul>
+      </li>
+      <li class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Architecture
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebArchitecture.html">Browsers</a></li>
+          <li><a href="WebArchitecture.html#servers">Servers</a></li>
+          <li><a href="WebArchitecture.html#components">Key Components</a></li>
+        </ul>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTTP
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HTTP.html">Request Response</a></li>
+          <li><a href="HTTP.html#methods">HTTP Methods</a></li>
+          <li><a href="HTTP.html#headers">Headers</a></li>
+          <li><a href="HTTP.html#makerequest">Making Requests</a></li>
+          <li><a href="HTTP.html#responsecodes">Response Codes</a></li>
+        </ul>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Content
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebContent.html">Overview</a></li>
+          <li><a href="WebContent.html#htmlcssjs">HTML, CSS &amp; JavaScript</a></li>
+          <li><a href="WebContent.html#dom">The DOM</a></li>
+          <li><a href="WebContent.html#frameworks">Extensions &amp; Frameworks</a></li>
+        </ul>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+  </div>
+</nav>
+   <div class="container">
+    <h1>Web Architecture</h1>
+    <div class="row">
+     <div class="col-md-7">
+     <h2 id="browsers">Web Browsers</h2>
+      <p>Web browsers are software designed to send HTTP requests and process the responses. Many browsers share common layout engines such as  Trident, Gecko or Webkit.</p><p>Below is a <a href="https://en.wikipedia.org/wiki/Timeline_of_web_browsers">Timeline of Browsers</a> from <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia.</a></p><br/>
+      <div id="webTimeline">
+       <p><a href="img/Timeline_of_web_browsers.svg.png"><img src="img/Timeline_of_web_browsers.svg.png" style="width:1780px; height:1365px;" alt="Timeline of Browsers"/></a></p>   
+      </div>   
+     </div>
+     <div class="col-md-5">
+      <h2>Common Web Browser Features</h2>
+      <table class="table">
+       <tr>
+        <th>Feature</th>
+        <th>Notes</th>
+       </tr>
+       <tr>
+        <td>Request Generation</td>
+        <td>Assemble URLs and initiates requests.</td>
+       </tr>
+       <tr>
+        <td>Response Handling</td>
+        <td>Accept server response codes and act on them.</td>
+       </tr>
+       <tr>
+        <td>Content Parsing</td>
+        <td>Read and process HTML and CSS markup.</td>
+       </tr>
+       <tr>
+        <td>Maintain State</td>
+        <td>Manage storage of cookies.</td>
+       </tr>
+       <tr>
+        <td>Client-side Scripting</td>
+        <td>Run JavaScript supplied by the server.</td>
+       </tr>
+       <tr>
+        <td>Encryption</td>
+        <td>Manage SSL transmissions over HTTPS.</td>
+       </tr>
+       <tr>
+        <td>Media Objects</td>
+        <td>Display and play media objects embedded in pages.</td>
+       </tr>
+       </table>
+      </div>
+     </div>
+     <div class="row">
+     <div class="col-md-7">
+     <h2 id="servers">Web Servers</h2>
+      <p>The use of the term <em>web server</em> refers to software rather than a machine, one PC can run multiple servers. A server will <em>listen</em> on a particular port for HTTP requests and handle them appropriately.</p><p>Below is a graph showing the <a href="https://news.netcraft.com/archives/2017/02/27/february-2017-web-server-survey.html">market share of web server companies as of February 2017</a> from <a href="https://www.netcraft.com/" target="_blank">Netcraft.</a></p><br/>
+      <div id="serverShare">
+       <p><a href="https://news.netcraft.com/archives/2017/02/27/february-2017-web-server-survey.html"><img src="img/Web_server_market_share.png" style="width:918px; height:470px;" alt="Web Server Market Share"/></a></p>   
+      </div>
+     </div> 
+     <div class="col-md-5">
+      <h2>Common Web Server Features</h2>
+      <table class="table">
+       <tr>
+        <th>Feature</th>
+        <th>Notes</th>
+       </tr>
+       <tr>
+        <td>Path Translation</td>
+        <td>Locate the resource specified by a URL.</td>
+       </tr>
+       <tr>
+        <td>Virtual Hosting</td>
+        <td>Run multiple websites from a single server.</td>
+       </tr>
+       <tr>
+        <td>Access Restriction</td>
+        <td>Controls who can access resources.</td>
+       </tr>
+       <tr>
+        <td>Log Access and Errors</td>
+        <td>Records events on the server, helping identify errors.</td>
+       </tr>
+       <tr>
+        <td>Encrypted Operation</td>
+        <td>Protects data in transit.</td>
+       </tr>
+       <tr>
+        <td>Load Balancing</td>
+        <td>Manages traffic and processing resources.</td>
+       </tr>
+       <tr>
+        <td>Server Scripting</td>
+        <td>Allows external programs and applications to run.</td>
+       </tr>
+      </table>  
+     </div>  
+     </div>
+    <h2 id="components">Key Components of the Web</h2>
+    <div class="row">
+    <div class="col-md-12">
+     <p><strong>HTTP</strong> covers the format of request and response messages. A <strong>URI</strong> is a formatted string used to identify a resource. <strong>HTML/XHTML</strong> is the markup language used to write websites (inlcuding this one!). The <strong>DNS</strong> or the Domain Name System is the internet's equivalent of a phonebook. <strong>TCP/IP</strong> is the internet protocol suite covered in more detail <a href="HowTheInternetWorks.html#tcpip">here.</a></p>
+    </div>
+    </div>
+   </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.slim.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+  </div>
+ </body>
+</html>

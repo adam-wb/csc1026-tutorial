@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>CSC1026 Tutorial - HTTP</title>
+
+    <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="css/core.css" rel="stylesheet">
+ </head>
+ <body>
+  <div id="wrapper">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">CSC1026 Tutorial <span class="glyphicon glyphicon-home"></span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">How The Internet Works
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HowTheInternetWorks.html">What is the Internet?</a></li>
+          <li><a href="HowTheInternetWorks.html#csp">Clients, Servers &amp; Peers</a></li>
+          <li><a href="HowTheInternetWorks.html#protocols">Protocols</a></li>
+          <li><a href="HowTheInternetWorks.html#tcpip">TCP/IP</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Architecture
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebArchitecture.html">Browsers</a></li>
+          <li><a href="WebArchitecture.html#servers">Servers</a></li>
+          <li><a href="WebArchitecture.html#components">Key Components</a></li>
+        </ul>
+      <li class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTTP
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HTTP.html">Request Response</a></li>
+          <li><a href="HTTP.html#methods">HTTP Methods</a></li>
+          <li><a href="HTTP.html#headers">Headers</a></li>
+          <li><a href="HTTP.html#makerequest">Making Requests</a></li>
+          <li><a href="HTTP.html#responsecodes">Response Codes</a></li>
+        </ul>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Content
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebContent.html">Overview</a></li>
+          <li><a href="WebContent.html#htmlcssjs">HTML, CSS &amp; JavaScript</a></li>
+          <li><a href="WebContent.html#dom">The DOM</a></li>
+          <li><a href="WebContent.html#frameworks">Extensions &amp; Frameworks</a></li>
+        </ul>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+  </div>
+</nav>
+   <div class="container">
+    <h1>HyperText Transfer Protocol</h1>
+    <div class="row">
+    <div class="col-md-12">
+    <h2 id="requestresponse">Request Response Protocol</h2>
+     <p><em>Clients</em> assemble HTTP request messages to request resources from servers. <em>Servers</em> then respond with an appropriate message which will include any content to display. These requests and responses travel as TCP/IP packets with additional metadata as a <em>header</em> while content is contained in the optional <em>body</em> entity. HTTP is a <strong>stateless</strong> protocol, each paired request and response is an independent exchange. The lack of protocol level maintenance of state enables better scalability.</p>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-7">
+     <h2 id="methods">Common HTTP Methods</h2>
+     <table class="table">
+      <tr>
+       <th>Method</th>
+       <th>Use</th>
+       <th>Safe?</th>
+       <th>Idempotent?</th>
+       <th>Mandatory?</th>
+      </tr>
+      <tr>
+       <td>HEAD</td>
+       <td>Exchange of headers<br/> containing metadata.</td>
+       <td>Yes</td>
+       <td>Yes</td>
+       <td>Yes</td>
+      </tr>
+      <tr>
+       <td>GET</td>
+       <td>Requests and returns the current state of a resource such as a webpage.</td>
+       <td>Yes</td>
+       <td>Yes</td>
+       <td>Yes</td>
+      </tr>
+      <tr>
+       <td>POST</td>
+       <td>Updates a resource or submits some kind of form input.</td>
+       <td>No</td>
+       <td>No</td>
+       <td>No</td>
+      </tr>
+      <tr>
+       <td>PUT</td>
+       <td>The server will store the contents at a given location, used in file uploads.</td>
+       <td>No</td>
+       <td>Yes</td>
+       <td>No</td>
+      </tr>
+      <tr>
+       <td>DELETE</td>
+       <td>Deletes a specified resource, effectively the opposite of PUT.</td>
+       <td>No</td>
+       <td>Yes</td>
+       <td>No</td>
+      </tr>
+     </table>
+    </div>
+    <div class="col-md-5">
+    <h2>HTTP Methods</h2>
+     <p>Various operations are carried out over HTTP. GET and HEAD are essential methods, supported by anything that handles HTTP. The GET method returns the current state of a given resource and is the default method for a HTTP request. The HEAD method only returns the metadata of a given resource. All other methods are optional. Methods can be categorised according to whether they are <strong>safe, idempotent</strong> or <strong>mandatory.</strong></p>
+     <ul>
+      <li>The only <strong>mandatory</strong> methods are GET and HEAD, as explained above.</li>
+      <li><strong>Safe</strong> methods do not change the state of a given resource.</li>
+      <li><strong>Idempotent</strong> methods do not have any side effects if identical requests are repeated.</li>
+     </ul>
+    </div>
+    </div>
+    <h2 id="headers">HTTP Headers</h2>
+    <div class="row">
+    <div class="col-md-12">
+     <p>Headers contain the metadata for request/response exchanges. Some headers are considered <em>generic</em> in that they can be applied to both the request and the response. For example, <strong>Date</strong> adds a timestamp to each message. <strong>Cache-control</strong> contains instructions for en-route caching of messages. Headers can also be spoofed, posing a potential security risk. Other HTTP headers only apply to either the request <strong>or</strong> response element of an exchange.</p>
+    </div>
+    </div>
+    <h2 id="makerequest">Making a Request</h2>
+    <div class="row">
+    <div class="col-md-12">
+    <p>Any web resource will always have a specific <strong>URL</strong> or Uniform Resource Locator. URLs can be split into multiple parts. All urls contain a <strong><span class="scheme">scheme</span></strong>, an <strong><span class="authority">authority</span></strong> and (technically) a <strong><span class="path">path</span></strong>. The <strong><span class="scheme">scheme</span></strong> is simply the <code>http:</code> section. The <strong><span class="authority">authority</span></strong> is the <code>//www.google.co.uk</code> section. All urls contain a path, even if it is empty. It could be as simple as <code>/</code> or be more lengthly to point to another page on the website; for example <code>/search</code>. The path can be followed by a <strong><span class="query">query</span></strong>, which is generally some user submitted data, such as a search query: <code>?q=howtohtml</code>. Finally, a URL can contain a <strong><span class="fragment">fragment</span></strong> which is used to take the user to a specific part of a web page indicated by a <code>#</code> such as <code>#Requests</code></p>
+     <div id="url">
+      <p><span class="scheme">http:</span><span class="authority">//www.ncl.ac.uk</span><span class="path">/computing</span><span class="query">?q=CSC1026</span><span class="fragment">#CSS</span></p>
+     </div>
+    </div>
+    </div>
+    <h2 id="responsecodes">Response Codes</h2>
+    <div class="row">
+    <div class="col-md-12">
+     <p>There are a total of 41 HTTP response codes, the vast majority of which the user average user will never see. Famous code include error 404 - not found. Each error is represented by a 3 digit code:</p>
+     <ul>
+      <li>Informational - Range 1XX e.g. <em>101 Switching protocols</em></li>
+      <li>Success - Range 2XX e.g. <em>200 OK</em></li>
+      <li>Redirection - Range 3XX e.g. <em>301 Moved permanently</em></li>
+      <li>Client Error - Range 4XX e.g. <em>404 Not found</em></li>
+      <li>Server Error - Range 5XX e.g. <em>500 Internal server error</em></li>
+     </ul>
+    </div>
+    </div>
+   </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.slim.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+  </div>
+ </body>
+</html>

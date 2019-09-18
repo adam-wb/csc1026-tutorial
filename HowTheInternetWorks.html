@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>CSC1026 Tutorial - How the Internet Works</title>
+
+    <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="css/core.css" rel="stylesheet">
+ </head>
+ <body>
+  <div id="wrapper">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">CSC1026 Tutorial <span class="glyphicon glyphicon-home"></span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown active">
+        <a class="dropdown-toggle active" data-toggle="dropdown" href="#">How The Internet Works
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HowTheInternetWorks.html">What is the Internet?</a></li>
+          <li><a href="HowTheInternetWorks.html#csp">Clients, Servers &amp; Peers</a></li>
+          <li><a href="HowTheInternetWorks.html#protocols">Protocols</a></li>
+          <li><a href="HowTheInternetWorks.html#tcpip">TCP/IP</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Architecture
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebArchitecture.html">Browsers</a></li>
+          <li><a href="WebArchitecture.html#servers">Servers</a></li>
+          <li><a href="WebArchitecture.html#components">Key Components</a></li>
+        </ul>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTTP
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HTTP.html">Request Response</a></li>
+          <li><a href="HTTP.html#methods">HTTP Methods</a></li>
+          <li><a href="HTTP.html#headers">Headers</a></li>
+          <li><a href="HTTP.html#makerequest">Making Requests</a></li>
+          <li><a href="HTTP.html#responsecodes">Response Codes</a></li>
+        </ul>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Content
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebContent.html">Overview</a></li>
+          <li><a href="WebContent.html#htmlcssjs">HTML, CSS &amp; JavaScript</a></li>
+          <li><a href="WebContent.html#dom">The DOM</a></li>
+          <li><a href="WebContent.html#frameworks">Extensions &amp; Frameworks</a></li>
+        </ul>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+  </div>
+</nav>
+   <div class="container">
+    <h1>How the Internet Works</h1>
+    <div class="row">
+    <div class="col-md-6">
+    <h2 id="witi">What <em>is</em> the Internet?</h2>
+     <p>The internet is made up of networking infrastructure that lets various devices connect to one another, these devices include servers, PCs and mobiles. This connectivity is based on accepted standards such as the TCP/IP set of protocols. </p>
+     <p>These protocols specify exactly how devices should communicate. Protocols are responsible for deciding many attributes of a data transmisson including the type, size and structure of any data that is sent or recieved.</p>
+     <p>Clients and servers are responsible for allowing users to access various services that are found on the internet, including the web. Centralised servers can be used for everyone to connect to, or a peer to peer system can be used.</p>
+    </div>
+    <div class="col-md-6">
+     <div id="blumTED">
+      <p> <object type="application/x-shockwave-flash" style="width:560px; height:315px;" data="https://embed.ted.com/talks/andrew_blum_what_is_the_internet_really">
+       <param name="What is the Internet Really?" value="https://embed.ted.com/talks/andrew_blum_what_is_the_internet_really"/>
+       <param name="allowFullScreen" value="true"/>
+       <param name="allowScriptAccess" value="always"/> Video failed to load :&#40;
+      </object> <br/> What is the Internet Really? <br/> by <a href="http://andrewblum.net/" target="_blank"> Andrew Blum </a> at <a href="https://www.ted.com/" target="_blank"> TED </a> </p>
+     </div>
+    </div>
+    </div>
+    <h2 id="csp">Clients, Servers &amp; Peers</h2>
+    <div class="row">
+    <div class="col-md-12">
+      <p>The client server model is by far the most commonly used in combination with various communication protocols. </p>
+      <p>Centralised servers are generally favoured over a peer to peer system and are more common.</p>
+     <ul>
+      <li>Email clients access your internet service provider's web server to retrieve messages.</li>
+      <li>Your web browser retrieves web pages to be displayed by acessing various web servers where they are stored.</li>
+     </ul>
+      <p>Peer to peer technology on the other hand is used to connect two or more computers and devices. In this case, all devices effectively function as both client and server.</p>
+     <ul>
+      <li>Voice over IP or video calling through services like Skype use this peer to peer system.</li>
+     </ul>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-7">
+     <h2 id="protocols">Common Protocols</h2>
+     <table class="table">
+      <tr>
+       <th>Protocol</th>
+       <th></th>
+       <th>Notes</th>     
+      </tr>
+      <tr>
+       <td>HTTP</td>
+       <td><strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol</td>
+       <td>Essential protocol for everything web related.</td>
+      </tr>
+      <tr>
+       <td>SSL</td>
+       <td><strong>S</strong>ecure <strong>S</strong>ockets <strong>L</strong>ayer</td>
+       <td>Use to encrypt data sent across the web.</td>
+      </tr>
+      <tr>
+       <td>HTTPS</td>
+       <td><strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol <strong>S</strong>ecure</td>
+       <td>A combination of HTTP and SSL.</td>
+      </tr>
+      <tr>
+       <td>SMTP<br/>POP<br/>IMAP<br/></td>
+       <td><strong>S</strong>imple <strong>M</strong>ail <strong>T</strong>ransfer <strong>P</strong>rotocol<br/><strong>P</strong>ost <strong>O</strong>ffice <strong>P</strong>rotocol<br><strong>I</strong>nternet <strong>M</strong>essage <strong>A</strong>ccess <strong>P</strong>rotocol</td>
+       <td>All used to provide email services.</td>
+      </tr>
+      <tr>
+       <td>FTP</td>
+       <td><strong>F</strong>ile <strong>T</strong>ransfer <strong>P</strong>rotocol</td>
+       <td>Used to move files between devices.</td>
+      </tr>
+      <tr>
+       <td>SSH<br>SFTP</td>
+       <td><strong>S</strong>ecure <strong>Sh</strong>ell<br/><strong>S</strong>ecure/<strong>S</strong>SH <strong>FTP</strong></td>
+       <td>SSH gives encrypted access to remote machines.<br/> SFTP is an extenstion to this and allows encrypted file transfer.</td>
+      </tr>
+      <tr>
+       <td>BitTorrent</td>
+       <td></td>
+       <td>Allows peer to peer access and exchange of data.</td>
+      </tr>
+     </table>
+    </div>
+    <div class="col-md-5">
+    <h2>Protocols</h2>
+      <p>Both clients and servers use a combination of protocols (sometimes called a <em>stack</em>) to provide all manner of services</p>
+      <p>These include:</p>
+     <ul>
+      <li>Web access</li>
+      <li>Email</li>
+      <li>File transfers</li>
+      <li>Peer to peer data exchanges</li>
+      <li>Instant messaging</li>
+      <li>Shell and console access for computers</li>
+     </ul>
+    </div>
+    </div>
+    <h2 id="tcpip">TCP/IP</h2>
+     <div class="row">
+     <div class="col-md-12">
+      <p>TCP stands for <strong>T</strong>ransmission <strong>C</strong>ontrol <strong>P</strong>rotocol. It breaks outgoing messages into <em>packets</em> to be sent via IP and reassembles incoming messages. Packets are split into their <em>header</em> and <em>body</em>. The header contains metadata and the body contains the actual data.</p>
+      <p>IP stands for <strong>I</strong>nternet <strong>P</strong>rotocol. It handles the delivery of packets to a designated <em>IP address</em>, a unique numeric identifier for an internet connected device. For example: <code>128.246.132.768</code></p>
+      <p>The IP protocol routes packets based on the informaton in their header. This routing allows packets to travel through multiple routes and be routed around points of failure. However, there is a risk of data corruption, packets being lost, packets being duplicated or them being delivered in the wrong order.</p>
+      <p>Because of these risks, IP can only promise <em>best-effort-delivery</em>. To help mitigate these risks, TCP can request that certain packets are retransmitted, re-order the packets it recieves. In addition, if the transmission is taking too long, it can refuse to wait for any more packets and drop the connection.</p>
+     </div>
+    </div>
+   </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.slim.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+  </div>
+ </body>
+</html>

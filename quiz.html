@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>CSC1026 Tutorial - Quiz</title>
+
+    <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="css/core.css" rel="stylesheet">
+ </head>
+ <body>
+  <div id="wrapper">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">CSC1026 Tutorial <span class="glyphicon glyphicon-home"></span></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">How The Internet Works
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HowTheInternetWorks.html">What is the Internet?</a></li>
+          <li><a href="HowTheInternetWorks.html#csp">Clients, Servers &amp; Peers</a></li>
+          <li><a href="HowTheInternetWorks.html#protocols">Protocols</a></li>
+          <li><a href="HowTheInternetWorks.html#tcpip">TCP/IP</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Architecture
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebArchitecture.html">Browsers</a></li>
+          <li><a href="WebArchitecture.html#servers">Servers</a></li>
+          <li><a href="WebArchitecture.html#components">Key Components</a></li>
+        </ul>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTTP
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="HTTP.html">Request Response</a></li>
+          <li><a href="HTTP.html#methods">HTTP Methods</a></li>
+          <li><a href="HTTP.html#headers">Headers</a></li>
+          <li><a href="HTTP.html#makerequest">Making Requests</a></li>
+          <li><a href="HTTP.html#responsecodes">Response Codes</a></li>
+        </ul>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Web Content
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="WebContent.html">Overview</a></li>
+          <li><a href="WebContent.html#htmlcssjs">HTML, CSS &amp; JavaScript</a></li>
+          <li><a href="WebContent.html#dom">The DOM</a></li>
+          <li><a href="WebContent.html#frameworks">Extensions &amp; Frameworks</a></li>
+        </ul>
+        <li class="active"><a href="quiz.html">Quiz</a></li>
+    </ul>
+  </div>
+</nav>
+ <div class="container">      
+  <h1>Quiz</h1>
+    <div class="row">
+     <div class="col-md-12">
+       <form id="quiz">
+        <div id="question1"><p>Q1: What does HTML stand for?</p>
+        <p>
+         <label class="radio-inline"><input type="radio" name="question1"/> HyperText Markup Language</label>
+         <label class="radio-inline"><input type="radio" name="question1"/> HeurisTic Marking Library</label>
+         <label class="radio-inline"><input type="radio" name="question1"/> High Temperature Magnetic Line</label>
+         <label class="radio-inline"><input type="radio" name="question1"/> HisToric Mammoth Link</label>
+        </p></div>
+        <div id="question2"><p>Q2: Complete the following code to turn all <code>&lt;p&gt;</code> tags <span id="magenta">magenta</span>.</p>
+<pre>
+p {
+    &lt;answer&gt;: magenta;
+}         
+</pre>
+        <p>
+         <label class="radio-inline"><input type="radio" name="question2"/> style.color</label>
+         <label class="radio-inline"><input type="radio" name="question2"/> background-colour</label>
+         <label class="radio-inline"><input type="radio" name="question2"/> background-color</label>
+        </p></div>
+        <div id="question3"><p>Q3: The IMAP protocol is used for encrypting files.</p>
+        <p>
+         <label class="radio-inline"><input type="radio" name="question3"/> True</label>
+         <label class="radio-inline"><input type="radio" name="question3"/> False</label>
+        </p></div>
+        <div id="question4"><p>Q4: What is the default HTTP method?</p>
+        <p>
+         <select name="dropDown">
+          <option selected="selected">Choose an answer</option>
+          <option>HEAD</option>
+          <option>GET</option>
+          <option>POST</option>
+          <option>PUT</option>
+          <option>DELETE</option>
+         </select>    
+        </p></div>
+        <div id="question5"><p>Q5: Complete these methods used for internet communication.</p>
+         <p>
+          <input type="text" name="question5" placeholder="Answer"/> Server Model<br/>
+          <input type="text" name="question5" placeholder="Answer"/> to
+          <input type="text" name="question5" placeholder="Answer"/> <br/>
+         </p>   
+        </div>
+        <div id="question6"><p>Q6: What does DOM stand for?</p>
+        <p>
+         <input type="text" name="question6" placeholder="Answer"/>    
+        </p></div>
+        <div id="question7"><p>Q7: Which <strong>two</strong> of these are common web browser features?</p>
+        <p>
+         <label class="checkbox-inline"><input type="checkbox" name="question7"/> Load Balancing</label>
+         <label class="checkbox-inline"><input type="checkbox" name="question7"/> Spreadsheets</label>
+         <label class="checkbox-inline"><input type="checkbox" name="question7"/> Maintain State</label>
+         <label class="checkbox-inline"><input type="checkbox" name="question7"/> Resource Triangulation</label>
+         <label class="checkbox-inline"><input type="checkbox" name="question7"/> Response Handling</label>
+         <label class="checkbox-inline"><input type="checkbox" name="question7"/> Server Scripting</label>   
+        </p></div>
+        <div id="question8"><p>Q8: Which of the following regular expressions would match with this string?: <em>O Romeo, Romeo! Wherefore art thou Romeo?</em> </p>
+        <p>
+         <label class="radio-inline"><input type="radio" name="question8"/><code>/Romeo\s+/g</code></label>
+         <label class="radio-inline"><input type="radio" name="question8"/><code>/art\W/g</code></label>
+         <label class="radio-inline"><input type="radio" name="question8"/><code>/^Romeo\?+/g</code></label>
+        </p></div>
+        <div id="question9"><p>Q9: What would the alert box display? </p>
+<pre>
+number = 15*4;
+function showAlert() {
+    window.alert("3" + number);
+}
+</pre> 
+        <p>
+         <input type="text" name="question9" placeholder="Answer"/>
+        </p></div>
+        <div id="question10"><p>Q10: What does this CSS selector affect? <code>#nav .selected > a:hover</code></p>
+        <p>
+         <label class="radio"><input type="radio" name="question10"/>A hyperlink being hovered over that is a direct child of a div called 'selected' from a tag that has the class 'nav'.</label>
+         <label class="radio"><input type="radio" name="question10"/>A hyperlink being hovered over that is a direct child of a tag with the 'selected' class inside a div with the ID of 'nav'.</label>
+         <label class="radio"><input type="radio" name="question10"/>A hyperlink being hovered over apart from those that are a direct child of a div called 'selected' from a tag that has the class 'nav'.</label>
+        </p></div>
+       </form>
+        <p><button id="submit" class="btn btn-default btn-lg">Submit</button>
+           <button id="reset" class="btn btn-default btn-lg">Reset Answers</button></p>
+    </div>
+  </div>
+ </div>
+</div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.slim.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+   <!-- My JavaScript -->
+   <script src="js/core.js"></script>
+   <script src="js/quizValidate.js"></script>
+  </body>
+</html>

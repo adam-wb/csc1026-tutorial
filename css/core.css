@@ -1,0 +1,97 @@
+/* Adds padding to the body so the navbar doesn't cover content */
+body {
+    padding-top: 50px;
+}
+/* Gives some padding at the bottom and gives a white background */
+#wrapper {
+    padding-bottom: 30px;
+    position: relative;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+/* Removes underline on navbar links */
+.navbar a {
+    text-decoration: none;
+}
+/* Formats text on the jumbotron */
+.jumbotron {
+    text-align: center;
+    color: #26712e; 
+}
+/* Colours and formats headers */
+h1 {
+    text-align: center;
+    color: #308d3a;
+}
+/* Colours headers */
+h2, h3 {
+    color: #308d3a;
+}
+/* Gives an underline to and colours hyperlinks */
+a {
+    text-decoration: underline;
+    color: #308d3a;
+}
+/* Aligns text to the center */
+#blumTED {
+    text-align: center;
+}
+/* Specifies the size that should be taken up and adds a scrollbar for extra content */
+#webTimeline {
+    overflow: auto;
+    height: 315px;
+}
+/* Specifies the size that should be taken up and adds a scrollbar for extra content */
+#serverShare {
+    overflow: auto;
+    height: 315px;
+}
+/* Formats the example URL and puts a box around it */
+#url {
+    display: inline-block;
+    border-width: 10px;
+    border: 2px solid #308d3a;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+/* Adds some space between the different URL components */
+#url span {
+    padding: 2px;
+}
+/* Colours certain text */
+.scheme {
+    color: red;
+}
+/* Colours certain text */
+.authority {
+    color: darkorange;
+}
+/* Colours certain text */
+.path {
+    color: dodgerblue;
+}
+/* Colours certain text */
+.query {
+    color: blue;
+}
+/* Colours certain text */
+.fragment {
+    color: darkviolet;
+}
+/* Border needed around all quiz questions, is changed by JavaScript */
+form >div {
+    border: 5px solid #FFFFFF;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px 0px;
+}
+/* Colours some text */
+#magenta {
+    color: magenta;
+}
+/* Gets rid of a bold effect and moves some form inputs */
+#question10 .radio {
+    font-weight: normal;
+    padding: 0px 20px;
+}
